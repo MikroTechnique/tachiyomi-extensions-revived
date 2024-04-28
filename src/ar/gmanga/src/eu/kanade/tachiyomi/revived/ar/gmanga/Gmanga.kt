@@ -41,7 +41,7 @@ import uy.kohesive.injekt.injectLazy
 
 class Gmanga : ConfigurableSource, HttpSource() {
 
-    private val domain: String = "gmanga.org"
+    private val domain: String = "gmanga.site"
 
     override val baseUrl: String = "https://$domain"
 
@@ -140,7 +140,7 @@ class Gmanga : ConfigurableSource, HttpSource() {
                     it.jsonObject["cover"]!!.jsonPrimitive.content.substringBeforeLast(".")
                     }.webp"
                     thumbnail_url =
-                        "https://media.gmanga.me/uploads/manga/cover/${it.jsonObject["id"]!!.jsonPrimitive.content}/$thumbnail"
+                        "https://media.gmanga.site/uploads/manga/cover/${it.jsonObject["id"]!!.jsonPrimitive.content}/$thumbnail"
                 }
             },
             (mangas.size >= 30) && !isLatest,
